@@ -80,7 +80,7 @@ from django.utils.translation import ugettext_lazy as _
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True
-
+SECRET_KEY = "hello2323434112312"
 # If True, the django-modeltranslation will be added to the
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
@@ -143,17 +143,17 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.mysql",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "my_blog",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "zhuchen01",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "zhuchen01",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": "118.24.159.168",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": "3306",
     }
 }
 
@@ -166,8 +166,6 @@ DATABASES = {
 PROJECT_APP_PATH = os.path.dirname(os.path.abspath(__file__))
 PROJECT_APP = os.path.basename(PROJECT_APP_PATH)
 PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
-print PROJECT_APP_PATH, "2" * 100  
-print PROJECT_ROOT
 #Every cache key will get prefixed with this value - here we set it to
 # the name of the directory the project is in to try and use something
 # project specific.
@@ -182,7 +180,6 @@ STATIC_URL = "/static/"
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
-print STATIC_ROOT, "@" * 100
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -249,6 +246,7 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "home",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 )
